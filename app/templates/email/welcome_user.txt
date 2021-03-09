@@ -1,0 +1,10 @@
+Hello, {{user.username}}
+
+Welcome to Book-Barn!
+
+We have just seen you have signed up for our application and want to welcome you to Book-Barn World.
+
+Regards,
+Book Barn Team.
+
+
