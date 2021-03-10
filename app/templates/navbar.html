@@ -1,45 +1,31 @@
-<div class="navbar navbar-inverse" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a class="navbar-brand" href="/"> Book Barn </a></li>
-        </div>
-
-        <ul class="navbar-nav ml-auto">
-            {% if current_user.is_authenticated %}
-
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" style= 'margin-right:30px' data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-user"></i>&nbsp;<strong>{{current_user.username}}</strong> </a>
-            
-            </li>
-            <div class="navbar-nav ">
-                <a class="nav-item text-center" href="{{url_for('auth.logout')}}"><i class="fas fa-sign-out-alt"></i>&nbsp; Log out</a>
-              </div>
-            {% else %}
-            <li class="nav-item">
-                <a  class="nav-link text-center" href="{{url_for('auth.login')}}" style= 'margin-right:30px'><i class="fas fa-sign-in-alt"></i>&nbsp; <strong>Log In</strong></a>
-            </li>
-            <li class="nav-item ">
-                    <a style= 'margin-right:30px' class="nav-link" href="{{url_for('auth.signup')}}"><i class="fas fa-user-plus"></i></i>&nbsp; <strong>Sign Up</strong></a>
-                </li>
-            {%endif%}
-
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand text-center" href="/">Book Barn</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   
-        <div class="container text-center" style= "font-family: 'Kurale', serif;">
-            {% for message in get_flashed_messages() %}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {% if current_user.is_authenticated %}
+
+      <div class="navbar-nav mr-auto">
+        <div class="nav-item active">
+            <i class="fas fa-user"></i>&nbsp;<strong>{{current_user.username}}</strong> </a>
+        </div>
+        <div class="nav-item">
+            <a class="nav-item text-center" href="{{url_for('auth.logout')}}"><i class="fas fa-sign-out-alt"></i>&nbsp; Log out</a>
+        </div>
+        {% else %}
+        <div class="nav-item ">
+            <a  class="nav-link text-center" href="{{url_for('auth.login')}}"><i class="fas fa-sign-in-alt"></i>&nbsp; <strong>Log In</strong></a>
+        </div>
+        <div class="nav-item">
+            <a class="nav-link" href="{{url_for('auth.signup')}}"><i class="fas fa-user-plus"></i></i>&nbsp; <strong>Sign Up</strong></a>
+        </div>
+        {%endif%}
+    </div>
+      
+
+      {% for message in get_flashed_messages() %}
             <div class="alert alert-success">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             {{ message }}
@@ -54,24 +40,15 @@
                     <button class="btn btn-sm btn-outline-info" id="subs">Subscribe</button>
                 </div>
             </form>
-        </div>
-
     </div>
-</div>
+  </nav>
 
 
 {% block scripts %}
 
-<link rel="stylesheet" href= 
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
-    <script src= 
-"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
-    </script> 
-    <script src= 
-"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> 
-    </script> 
-    <script src= 
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"> 
-    </script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 {% endblock%}
