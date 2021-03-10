@@ -1,0 +1,15 @@
+#body{
+    font-family: 'Indie Flower', cursive;
+    background-image: url(../images/library3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bolder;
+    font-size: larger;
+}
+.title{
+    color: whitesmoke;
+    font-size: 800;
+    font-weight: bolder;
+    text-align: center;
+}
