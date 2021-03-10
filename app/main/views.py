@@ -1,7 +1,9 @@
-from flask import render_template,request,redirect,url_for,abort,flash
+
+from flask import render_template, redirect, url_for,abort,request,flash
 from . import main
-from .. import db
-from ..models import Subscriber
+from flask_login import login_required,current_user
+from ..models import User,Subscriber
+from .. import db,photos
 from ..email import mail_message
 
 # Views
