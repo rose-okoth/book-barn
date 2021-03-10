@@ -1,5 +1,5 @@
 import urllib.request,json
-from .models import Book
+# from .models import Book
 
 def configure_request(app):
     global api_key,base_url

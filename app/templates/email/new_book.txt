@@ -1,0 +1,10 @@
+Hello subscriber!
+
+Here's your book recommendation for the day.
+
+Title: {{new_book.title}}
+Post: {{new_book.content|truncate(30)}}
+
+Regards,
+
+The Book Barn Team.

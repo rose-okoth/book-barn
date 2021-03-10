@@ -8,10 +8,10 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 
-
 db = SQLAlchemy()
 mail = Mail()
 bootstrap = Bootstrap()
+ft-authentication
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
@@ -23,8 +23,10 @@ def create_app(config_name):
 
     # Creating the app configurations
     app.config.from_object(config_options[config_name])
+    
     from .auth import auth as authentication_blueprint
     from .main import main as main_blueprint
+    
     app.register_blueprint(authentication_blueprint)
     app.register_blueprint(main_blueprint)
 
@@ -35,10 +37,12 @@ def create_app(config_name):
     db.init_app(app)
     # configure_uploads(app,photos)
     mail.init_app(app)
+    app.secret_key = "123456"
 
-    # Registering the blueprint
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
+    # Initializing flask extensions
+    bootstrap.init_app(app)
+    db.init_app(app)
+    mail.init_app(app)
 
     # setting config
     from .request import configure_request
