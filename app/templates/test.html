@@ -7,3 +7,12 @@
         <br><br><br><br><br>
     {% endfor %}
 </div> -->
+<div>
+    {% for books in results %}
+    <p>title: {{books.title}}</p>
+    <p>author: {{books.author}}</p>
+    <p>description: {{books.description}}</p>
+
+    <br><br><br><br><br>
+{% endfor %}
+</div>

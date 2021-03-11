@@ -1,17 +1,33 @@
 {% extends 'base.html'%}
 
-{% block content %}
 
-<h1> Books </h1>
+<div class="child">
+{% block content %}    
+    
+    <h1>Books</h1>
 
-<div>
-    {% for source in sources %}
-        <p>IDS: {{source.id}}</p>
-        <p>Name: {{source.name}}</p>
-        <p>Description: {{source.description}}</p>
-        <p>Category: {{source.category}}</p>
+    <h2 class="sub_headings">About Us</h2>
+
+    <div class="last_spacer"></div>
+    <!-- <h2 class="section_title">About us </h2> -->
+    <div id="abt" class="about-container">
+ 
+        <p>Book-barn is a virtual library that offers various books based on category,Writers and Reviews</p>
+
+    </div>
+
+        {% for book in books %}
+        <img src='{{book.book_image}}'>
+        <p>Title: {{book.title}}</p>
+        <p>Author: {{book.author}}</p>
+        <p>Description: {{book.description}}</p>
+        <p>Rank: {{book.rank}}</p>
+        <p>Review: {{book.book_review_link}}</p>
+    
         <br><br><br><br><br>
     {% endfor %}
+
+   
 </div>
 
 {% endblock%}

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Poiret+One|Raleway|Ubuntu+Mono&display=swap');
+
+.child {
+    display: inline-block;
+    background: blue;
+    margin: 10px 0 0 10px;
+    flex-grow: 1;
+    height: 100px;
+  }
+
+*{
+    background-image: url('assets/lib-bg.jpg');
+}
