@@ -1,0 +1,18 @@
+<!-- <div>
+    {% for source in sources %}
+        <p>IDS: {{source.id}}</p>
+        <p>Name: {{source.name}}</p>
+        <p>Description: {{source.description}}</p>
+        <p>Category: {{source.category}}</p>
+        <br><br><br><br><br>
+    {% endfor %}
+</div> -->
+<div>
+    {% for books in results %}
+    <p>title: {{books.title}}</p>
+    <p>author: {{books.author}}</p>
+    <p>description: {{books.description}}</p>
+
+    <br><br><br><br><br>
+{% endfor %}
+</div>

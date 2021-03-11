@@ -3,9 +3,6 @@ DATABASE_URL='postgresql+psycopg2://oem:m3stravaill3s@localhost/book1'
 class Config:
     
     BOOK_API_BASE_URL ='https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key={}'
-    BOOKS_API_KEY = os.environ.get('BOOKS_API_KEY')
-    secret_key = os.environ.get('secret_key')
-
     book_api_base_url =''
     books_api_key = os.environ.get('books_api_key')
     SECRET_KEY = os.environ.get('SECRET_KEY')
