@@ -9,17 +9,21 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
         {% if title %}
         <title> {{ title }}</title>
         {% else %}
         <title> Welcome to the best online book library </title>
         {% endif %}
+        <!-- <link rel="stylesheet" href="app/static/css/index.css"> -->
+        
     </head>
-    <body>
+    <body class="body" style="background-image:url('https://149351115.v2.pressablecdn.com/wp-content/uploads/2020/02/og-blog.png')">
         <!-- Content block -->
 
         {% block content %}
 
         {% endblock%}
+        
     </body>
 </html>

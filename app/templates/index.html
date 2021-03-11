@@ -1,7 +1,52 @@
-{% extends 'base.html'%}
+{% extends 'bootstrap/base.html'%}
 
-{% block content %}
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
 
-<h1> Books </h1>
+{% block styles %}
+{{ super() }}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+{% endblock %}
 
-{% endblock%}
+{% block content %}   
+
+    <div class='container-fluid' id='body' style="background-image: url('app/static/lib-bg.jpg'); background-repeat: no-repeat;">
+        <div class="card card-image" style="background-image: url(https://img.freepik.com/free-photo/book-library-with-open-textbook_1150-5916.jpg?size=626&ext=jpg); background-repeat: no-repeat; background-size: cover;">   <class class="container-fluid">
+            <div class="jumbotron-fluid">
+                <div class="overlay">
+                    <br><br><br>
+                    <h1 class="text-white text-center welcome h-text">Book-barn</h1>
+                    <br><br><br><br>
+                    <h1 class="text-white text-center  h-text">Virtual library</h1>
+                    <h6 class="text-white text-center text h-text smaller-text">AMAZING BOOKS TO ENHANCE YOU GRAMMER AND READING SKILLS
+                    </h6>
+                </div>
+            </div>
+    </class>
+    </div>
+
+
+    </div>  
+
+    </div>
+    <br><br>
+    <div class='container'>
+        
+    </div>
+
+    <div class='row'>
+        <div class='col-md-4'>
+            <img src="../static/images/bk-5.jpg" alt="" style="height: 500px; width: 500px;">
+        </div>
+        <div class='col-md-4'>
+            <img src="../static/images/bk_2.jpg" alt="" style="height: 500px; width: 500px;">
+        </div>
+        <div class='col-md-4'>
+            <img src="../static/images/bk-4.jpg" alt="" style="height: 500px; width: 500px;">
+        </div>
+    </div>
+   
+{%endblock%}
+
