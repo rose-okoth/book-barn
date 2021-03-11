@@ -1,5 +1,5 @@
 import os 
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    
 class Config:
     
     BOOK_API_BASE_URL ='https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key={}'
