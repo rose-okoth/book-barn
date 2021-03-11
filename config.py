@@ -1,11 +1,11 @@
 import os 
-DATABASE_URL='postgresql+psycopg2://oem:m3stravaill3s@localhost/book1'
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 class Config:
     
     BOOK_API_BASE_URL ='https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key={}'
     BOOKS_API_KEY = os.environ.get('books_api_key')
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://oem:m3stravaill3s@localhost/book1'
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
@@ -17,12 +17,12 @@ class Config:
     
 class ProdConfig(Config):
     
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://oem:m3stravaill3s@localhost/book1'
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 
 class DevConfig(Config):
     
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://oem:m3stravaill3s@localhost/book1'
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
     DEBUG = True
     ENV = 'development'
