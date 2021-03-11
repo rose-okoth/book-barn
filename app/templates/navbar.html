@@ -35,8 +35,11 @@
         {% if current_user.is_authenticated %}
 
       <div class="navbar-nav mr-auto">
-        <div class="nav-item active">
+        <!-- <div class="nav-item active">
             <i class="fas fa-user"></i>&nbsp;<strong>{{current_user.username}}</strong> </a>
+        </div> -->
+        <div class="nav-item">
+            <a class="nav-link" href="{{url_for('main.profile',uname=current_user.username)}}"><i class="fas fa-user-plus"></i></i>&nbsp; <strong>{{current_user.username}}</strong></a>
         </div>
         <div class="nav-item">
             <a class="nav-item text-center" href="{{url_for('auth.logout')}}"><i class="fas fa-sign-out-alt"></i>&nbsp; Log out</a>
@@ -69,8 +72,6 @@
             </form>
         </div>
         
-        <li><a href="#">Profile</a></li>
-
     </div>
   </nav>
 

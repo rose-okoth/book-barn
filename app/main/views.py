@@ -46,12 +46,12 @@ def subscribe():
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
     # books_count = Book.count_books(uname)
-    user_joined = user.date_joined.strftime('%b %d, %Y')
+    # user_joined = user.date_joined.strftime('%b %d, %Y')
 
     if user is None:
         abort(404)
 
-    return render_template("profile/profile.html", user = user,date = user_joined)
+    return render_template("profile/profile.html", user = user)
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 # @login_required
