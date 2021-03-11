@@ -10,8 +10,9 @@ class User(UserMixin, db.Model):
     email  = db.Column(db.String(255),unique = True,nullable = False)
     secure_password = db.Column(db.String(255),nullable = False)
     bio = db.Column(db.String(255))
-    profile_pic_path = db.Column(db.String())    
-    
+    profile_pic_path = db.Column(db.String())
+    date_joined = db.Column(db.DateTime,default=datetime.utcnow)
+  
 
     @property
     def set_password(self):
