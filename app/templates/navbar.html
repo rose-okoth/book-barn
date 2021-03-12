@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <h3>    <a href="/">Book Barn</a>    </h3>
-    
-    <a href="/library/">Library</a>
+<div class="container-fluid">
+<div class="navbar navbar-expand-md navbar-light bg-light" style="margin-bottom:2; border-bottom: 2px solid; font-size: 30px; font-family: 'Kurale', serif;">
+    <h1 style="font-weight: 200;"><a href="/">Book Barn</a></h1>
+    <br><br>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,11 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         {% if current_user.is_authenticated %}
 
+      <h1><a href="/library/" class="nav-item nav-link px-3">Library</a></h1>  
+
       <div class="navbar-nav mr-auto">
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{current_user.username| capitalize}} <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
-                <li role="separator" class="divider"></li>
+                <li role="separator" class="divider"></li>                
                 <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
             </ul>
         </li>
@@ -46,7 +48,8 @@
         </div>
         
     </div>
-  </nav>
+</div>
+</div>
 
 
 {% block scripts %}
