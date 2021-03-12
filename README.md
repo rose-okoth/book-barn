@@ -4,7 +4,7 @@ Book Barn
 ​
 # Project Description
 
-This is a application where users/readers can be able to view books that are currently available, the reviews they've gotten, as well as leave thier own reviews,and where they can be able to buy them.
+This is a application where users/readers can be able to view books that are currently available, the reviews they've gotten, as well as leave their own reviews,and where they can be able to buy them.
 ​
 # Contributor(s) Information
 
